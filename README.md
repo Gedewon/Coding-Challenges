@@ -23,3 +23,10 @@ Folder name describes the problem
     .
     .
 ```
+  # Handles
+ 
+ [leetcode](https://leetcode.com/Gedewon/)
+ 
+ [HackerRank](https://www.hackerrank.com/gedewon_hayle_9)
+ 
+ [codeForces](https://codeforces.com/profile/Gedewon)
