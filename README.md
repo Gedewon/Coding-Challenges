@@ -7,7 +7,8 @@ banch of leet code,HackerRank and codeforces  questions and solution
 
 
 
-This repo shows my solutions in TypeScript with the code style strictly follows the [Google Typescript](https://google.github.io/styleguide/tsguide.html) Style Guide. 
+This repo shows my solutions in TypeScript with the code style strictly follows the [Google Typescript](https://google.github.io/styleguide/tsguide.html) Style Guide. <br/>
+C++ for codeForce since No support for TS.<br/>
 Please feel free to reference or contribute to the repo and STAR to support this repo, thank you!
 
 
