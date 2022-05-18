@@ -7,7 +7,7 @@ function kClosest(points: number[][], k: number): number[][] {
         distance.push(distanceFromOrigin(point));
     });
     
-    distance.sort(function(a,b){return a-b;});
+    distance.sort((a,b)=>a-b);
     let lastMinmumValue = distance[k - 1];
 
      points.forEach((point)=>{
