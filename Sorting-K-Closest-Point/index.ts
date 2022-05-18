@@ -3,16 +3,16 @@ function kClosest(points: number[][], k: number): number[][] {
 
     let distance= [];
     let answer = [];
-    points.forEach((element,index,array)=>{
-        distance.push(distanceFromOrigin(element));
+    points.forEach((point)=>{
+        distance.push(distanceFromOrigin(point));
     });
     
     distance.sort(function(a,b){return a-b;});
-    let distk = distance[k - 1];
+    let lastMinmumValue = distance[k - 1];
 
-     points.forEach((element,index,array)=>{
-        if(distanceFromOrigin(element) <= distk)
-            answer.push(element);
+     points.forEach((point)=>{
+        if(distanceFromOrigin(point) <= lastMinmumValue)
+            answer.push(point);
     });
     
     
