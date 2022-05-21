@@ -1,24 +1,24 @@
+
 function merge(intervals: number[][]): number[][] {
     
-
-    
-    intervals.sort((a, b) => a[0] - b[0]);
-
-    
-    
-    intervals.forEach((element,index)=>{
-       
-    if (!!intervals[index + 1] && (element[1] >= intervals[index + 1][0])) {
-
-        // merge both 
-        let left = intervals.shift();
-        let right = intervals.shift();
-       let maxright=  Math.max(left[1],...right);
-        intervals.unshift([left[0],maxright]);
-         }
-        
+  intervals.sort((a,b)=>a[0]-b[0]);
   
-        
-    });
-    return intervals ;
+  let stackOfIntervals = [];
+  stackOfIntervals.push(intervals[0]);
+  let intervalToCompare ;
+  
+  for(let i =1;i<intervals.length;i++){
+      intervalToCompare = stackOfIntervals.pop();
+      
+      if(intervalToCompare[1]<intervals[i][0]){
+          stackOfIntervals.push(intervalToCompare,intervals[i]);
+      }else if(intervalToCompare[1]>=intervals[i][0]){
+          intervalToCompare[1] = Math.max(intervalToCompare[1],intervals[i][1]);
+          stackOfIntervals.push(intervalToCompare);    
+      }  
+  }
+  
+   
+
+  return stackOfIntervals ;
 };
