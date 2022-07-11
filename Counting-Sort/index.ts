@@ -37,6 +37,23 @@ function countingSort(arr: number[]): number[] {
     return answer;
 
 }
+//count sorting
+let inputArray = [1,2,1,4];
+(function CountSorting(inputArray){
+
+  let newArray = Array(inputArray.length)
+                .fill(0);
+
+  inputArray.forEach(element=>{
+        newArray[element]=++newArray[element] || 1;
+  });
+
+  return newArray.map((element,index)=>Array(element)
+                              .fill(index))
+                              .flat()
+                              .filter(Boolean);
+})(inputArray);
+
 
 function main() {
     const ws: WriteStream = createWriteStream(process.env['OUTPUT_PATH']);
