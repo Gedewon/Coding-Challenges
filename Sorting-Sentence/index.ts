@@ -2,7 +2,7 @@
 
 function sortSentence(s: string): string {
    return mergeSort(s.split(' ')).join(' ').replace(/\d/g, '');
-  
+
 };
 
 
