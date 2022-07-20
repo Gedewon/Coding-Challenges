@@ -10,6 +10,21 @@ function targetIndices(nums: number[], target: number): number[] {
     return targetIndex;
     
 };
+function targetIndicesFaster(nums: number[], target: number): number[] {
+//enter your code below
+let listOfTargets = [];
+nums.sort((a,b)=>a-b); //nlogn
+for(let i = 0;i<nums.length;i++){    //n
+  if(nums[i]  > target) break; // break case ;
+  if(nums[i] === target)listOfTargets.push(i);
+
+}
+
+//nlogn  run time s 
+
+return listOfTargets;
+  
+};
  
  function bubbleSort(arr){
      
