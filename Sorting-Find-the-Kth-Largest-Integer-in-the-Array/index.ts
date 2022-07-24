@@ -1,4 +1,5 @@
 function kthLargestNumber(nums: string[], k: number): string {
+    //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort
     nums.sort(compareFun);  //nlogn 
     return nums[k-1];
 };
