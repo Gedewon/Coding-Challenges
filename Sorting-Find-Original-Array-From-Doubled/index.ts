@@ -4,7 +4,8 @@ function findOriginalArray(changed: number[]): number[] {
     if(changed.length%2 !== 0) return [];
     
     let newMap = new Map<number,number>();
-
+    
+    changed = coutSorting(changed);
     changed.forEach(element=>{
         if(newMap.has(element)){
             newMap.set(element,newMap.get(element)+1)
@@ -14,7 +15,6 @@ function findOriginalArray(changed: number[]): number[] {
     });
     
     let ans  = new Array<number>();
-    console.log(newMap)
     changed.forEach(element=>{
         
         let doubleValue =  newMap.get(element);
@@ -30,4 +30,16 @@ function findOriginalArray(changed: number[]): number[] {
     return [];
 };
 
+function coutSorting(changed:number[]):number[]{
+    let CountArray = []
+    
+    changed.forEach((element,index)=>{
+        CountArray[element] = ++CountArray[element] || 1
+    })
+    
+    return CountArray.flatMap((element,index)=>{
+           return new Array(element).fill(index);
+    }).filter(a=>a!== null);
+
+}
 
